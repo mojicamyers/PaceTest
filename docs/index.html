@@ -68,6 +68,7 @@
             require([
                 "esri/config",
                 "esri/core/urlUtils",
+                "esri/widgets/Track",
                 "esri/Map",
                 "esri/views/MapView",
                 "esri/layers/CSVLayer",
@@ -76,7 +77,7 @@
                 "esri/widgets/Search",
                 "dojo/domReady!"
             ], function(
-                    esriConfig, urlUtils, Map, MapView, CSVLayer, Legend, LayerList, Search){
+                    esriConfig, urlUtils, Track, Map, MapView, CSVLayer, Legend, LayerList, Search){
                 
                 
                 var myMap = new Map({
@@ -229,6 +230,10 @@ const searchWidget = new Search({
   view: myView,
   container: "searchDiv"
 });
+                var track = new Track({
+          view: myView
+        });
+        myView.ui.add(track, "top-left");
                 
             });
                 
