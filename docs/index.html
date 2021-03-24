@@ -277,6 +277,15 @@ const searchWidget = new Search({
   view: myView,
   container: "searchDiv"
 });
+                   var locateBtn = new Locate({
+          view: myView
+        });
+
+        // Add the locate widget to the top left corner of the view
+        myView.ui.add(locateBtn, {
+          position: "top-left"
+        });  
+            });
            });
                 
             
