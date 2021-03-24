@@ -1,8 +1,7 @@
 <! DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=7,IE=9">
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum scale=1, user-scalable=no">
         <title>SNAP Map</title>
         <style>
@@ -36,29 +35,30 @@
     float:left;
     padding: 0;
     margin: 0;
-    height: 100%;
-    width: 80%;
+    height: 80%;
+    width: 100%;
   }
     #panelDiv{
-        float:right;
+        float:bottom;
         padding:0;
-        height:100%;
-        width: 20%;
+        height:20%;
+        width: 100%;
         background-color: cornsilk;
             }
             #searchDiv{
-        float:top;
+        float:bottom;
         padding:0;
-        height:10%;
+        height:20%;
         width: 100%;
         background-color: cornsilk;
             }
             #legendDiv{
-        float:top;
+        float:bottom;
         padding:0;
-        height:90%;
+        height:80%;
         width: 100%;
         background-color: cornsilk;
+       
             }
         </style>
         <link rel="stylesheet" href="https://js.arcgis.com/4.17/esri/css/main.css">
@@ -68,6 +68,7 @@
             require([
                 "esri/config",
                 "esri/core/urlUtils",
+                "esri/widgets/Track",
                 "esri/Map",
                 "esri/views/MapView",
                 "esri/layers/CSVLayer",
@@ -75,7 +76,8 @@
                 "esri/widgets/LayerList",
                 "esri/widgets/Search",
                 "dojo/domReady!"
-            ], function(esriConfig, urlUtils, Map, MapView, CSVLayer, Legend, LayerList, Search){
+            ], function(
+                    esriConfig, urlUtils, Track, Map, MapView, CSVLayer, Legend, LayerList, Search){
                 
                 
                 var myMap = new Map({
@@ -227,10 +229,17 @@ const searchWidget = new Search({
   view: myView,
   container: "searchDiv"
 });
+//                
+//var track = new Track({
+//          view: myView
+//        });
+//        myView.ui.add(track, "top-left");
+//                
+//                myView.when(function() {
+//          track.start();
+//                });
                 
             });
-                
-          
                          
         </script>
     </head>
