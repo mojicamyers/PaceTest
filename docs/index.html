@@ -36,34 +36,33 @@
     float:left;
     padding: 0;
     margin: 0;
-    height: 80%;
-    width: 100%;
+    height: 100%;
+    width: 80%;
   }
     #panelDiv{
-        float:bottom;
+        float:right;
         padding:0;
-        height:20%;
-        width: 100%;
+        height:100%;
+        width: 20%;
         background-color: cornsilk;
             }
             #searchDiv{
-        float:bottom;
+        float:top;
         padding:0;
-        height:20%;
+        height:10%;
         width: 100%;
         background-color: cornsilk;
             }
             #legendDiv{
-        float:bottom;
+        float:top;
         padding:0;
-        height:80%;
+        height:90%;
         width: 100%;
         background-color: cornsilk;
-       
             }
         </style>
-        <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/css/main.css">
-        <script src="https://js.arcgis.com/4.18/"></script>
+        <link rel="stylesheet" href="https://js.arcgis.com/4.17/esri/css/main.css">
+        <script src="https://js.arcgis.com/4.17/"></script>
         
         <script>
             require([
@@ -76,8 +75,7 @@
                 "esri/widgets/LayerList",
                 "esri/widgets/Search",
                 "dojo/domReady!"
-            ], function(
-                    esriConfig, urlUtils, Map, MapView, CSVLayer, Legend, LayerList, Search){
+            ], function(esriConfig, urlUtils, Map, MapView, CSVLayer, Legend, LayerList, Search){
                 
                 
                 var myMap = new Map({
@@ -220,8 +218,7 @@
                 if (item.layer.type !="group"){
                     item.panel = {
                         content: "legend",
-                        open: true,
-                        display: inline,
+                        open: true
                     };
                 }
             }
@@ -230,8 +227,10 @@ const searchWidget = new Search({
   view: myView,
   container: "searchDiv"
 });
-                 
+                
             });
+                
+          
                          
         </script>
     </head>
